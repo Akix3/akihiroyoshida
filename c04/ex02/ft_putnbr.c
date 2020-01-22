@@ -6,11 +6,10 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 22:04:45 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/21 23:24:33 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 15:48:43 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putnbr(int nb)
@@ -25,7 +24,6 @@ void	ft_putnbr(int nb)
 	{
 		write(1, "-", 1);
 		nb *= -1;
-		ft_putnbr(nb);
 	}
 	if (nb > 0)
 	{
@@ -35,11 +33,4 @@ void	ft_putnbr(int nb)
 			ft_putnbr(nb);
 		write(1, &a, 1);
 	}
-}
-
-int main(void)
-{
-	int n = -12345678;
-	ft_putnbr(n);
-	return (0);
 }

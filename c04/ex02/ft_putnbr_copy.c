@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 21:56:40 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/22 15:46:29 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/21 22:04:45 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/22 15:31:03 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_putnbr(int nb)
 {
-	int n;
+	char a;
 
-	n = 0;
-	while (str[n] != '\0')
+	if (nb == -2147483648)
+		write(1, "-2147483648", 11);
+	if (nb == 0)
+		write(1, "0", 1);
+	if (nb < 0 && nb != -2147483648)
 	{
-		n++;
+		write(1, "-", 1);
+		nb *= -1;
 	}
-	write(1, str, n);
+	if (nb > 0)
+	{
+		a = (nb % 10 + '0');
+		nb /= 10;
+		if (nb != 0)
+			ft_putnbr(nb);
+		write(1, &a, 1);
+	}
+}
+
+int	main(void)
+{
+	ft_putnbr(1234567890);
+	return (0);
 }
