@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy_copy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 17:08:56 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/20 18:23:57 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 11:57:47 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 int	main(void)
 {
-	char dest1[20]= "123456789";
-	char src1[] = "Tokyo";
+	char dest1[20] = "123456789";
+	char src1[] = "TokyoTokyo";
 
 	printf("%s\n", dest1);
-	ft_strncpy(dest1, src1, 7);
+	ft_strncpy(dest1, src1, 9);
 	printf("%s\n", dest1);
 }

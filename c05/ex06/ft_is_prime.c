@@ -6,7 +6,7 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 23:17:10 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/22 23:37:53 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/23 10:50:34 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ int	ft_is_prime(int nb)
 {
 	int n;
 
+	if (nb < 0 || nb == 0 || nb == 1)
+		return (0);
 	n = (nb - 1);
 	while (n > 1)
 	{

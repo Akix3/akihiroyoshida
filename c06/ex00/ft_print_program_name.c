@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 21:48:03 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/18 15:46:17 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/23 12:52:43 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/23 13:23:20 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_putchar(char c)
 {
-	char character;
+	write(1, &c, 1);
+}
 
-	character = 'a';
-	while (character <= 'z')
+int	main(int argc, char *argv[])
+{
+	int i;
+
+	while (argv[0][i] != '\0')
 	{
-		write(1, &character, 1);
-		character++;
+		ft_putchar(argv[0][i]);
+		i++;
 	}
+	ft_putchar('\n');
+	return (0);
 }

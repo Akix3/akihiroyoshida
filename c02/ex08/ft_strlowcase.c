@@ -6,11 +6,11 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 20:29:54 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/20 20:31:05 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 13:09:41 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int n;
 	int offset;

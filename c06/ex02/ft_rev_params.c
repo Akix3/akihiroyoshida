@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 22:00:14 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/18 15:00:24 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/23 14:45:21 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/23 14:54:06 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
+void	ft_putchar(char a)
 {
-	char character;
+	write(1, &a, 1);
+}
 
-	character = 'z';
-	while (character >= 'a')
+int	main(int argc, char *argv[])
+{
+	int c1;
+	int c2;
+
+	c1 = 0;
+	while (argv[c1 + 1] != '\0')
 	{
-		write(1, &character, 1);
-		character--;
+		c1++;
+	}
+	while (c1 != 0)
+	{
+		c2 = 0;
+		while (argv[c1][c2] != '\0')
+		{
+			ft_putchar(argv[c1][c2]);
+			c2++;
+		}
+		ft_putchar('\n');
+		c1--;
 	}
 }

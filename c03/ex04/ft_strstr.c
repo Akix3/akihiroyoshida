@@ -6,7 +6,7 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 17:34:56 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/21 18:38:30 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 17:49:35 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strstr(char *str, char *to_find)
 	int m;
 
 	n = 0;
+	if (to_find[0] == '\0')
+		return (str);
 	while (str[n] != '\0')
 	{
 		m = 0;
@@ -23,7 +25,7 @@ char	*ft_strstr(char *str, char *to_find)
 		{
 			m++;
 			if (to_find[m] == '\0')
-				return (str + (n));
+				return (str + n);
 		}
 		n++;
 	}

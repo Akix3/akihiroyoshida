@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_numeric_copy.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 19:10:54 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/20 19:31:30 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:46:26 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_str_is_numeric(char *str)
 
 int	main(void)
 {
-	char a[] = "";
+	char a[] = "1a";
 
 	printf("%d", ft_str_is_numeric(a));
 	return (0);

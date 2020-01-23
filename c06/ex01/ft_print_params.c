@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/18 14:10:56 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/18 15:46:13 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/23 13:24:02 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/23 13:32:32 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putchar(char a)
 {
-	write(1, &c, 1);
+	write(1, &a, 1);
 }
 
-void	ft_print_comb2(void)
+int	main(int argc, char *argv[])
 {
-	int a;
-	int b;
+	int c1;
+	int c2;
 
-	a = 0;
-	while (a <= 98)
+	c1 = 1;
+	while (argv[c1] != '\0')
 	{
-		b = a + 1;
-		while (b <= 99)
+		c2 = 0;
+		while (argv[c1][c2] != '\0')
 		{
-			ft_putchar(a / 10 + '0');
-			ft_putchar(a % 10 + '0');
-			ft_putchar(' ');
-			ft_putchar(b / 10 + '0');
-			ft_putchar(b % 10 + '0');
-			if (a != 98 || b != 99)
-			{
-				write(1, ", ", 2);
-			}
-			b++;
+			ft_putchar(argv[c1][c2]);
+			c2++;
 		}
-		a++;
+		ft_putchar('\n');
+		c1++;
 	}
+	return (0);
 }

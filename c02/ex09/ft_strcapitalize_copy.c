@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strcapitalize_copy.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 20:32:41 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/20 21:14:53 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:55:37 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,12 @@ char	*ft_strcapitalize(char *str)
 
 int	main(void)
 {
-	char a[] = "salut, comment tuvas ? 42mots quarante-deux; cinquante+et+un";
-	printf("%s", ft_strcapitalize(a));
+	char a00[] = "salut, comment tuvas ? 42mots quarante-deux; cinquante+et+un";
+	char a01[] = "salut, comment tuvas ? 42mots ARTS";
+	char a02[] = "salut, comment tuvas ? 42RDSAFAmots ARTS";
+
+	printf("%s\n", ft_strcapitalize(a00));
+	printf("%s\n", ft_strcapitalize(a01));
+	printf("%s\n", ft_strcapitalize(a02));
 	return (0);
 }

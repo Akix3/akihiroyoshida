@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_find_next_prime_copy.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 19:38:56 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/18 15:44:50 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/23 10:43:37 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/23 14:43:07 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_print_comb(void)
+int	ft_find_next_prime(int nb)
 {
-	char first;
-	char second;
-	char third;
+	int n;
+	int m;
 
-	first = '0' - 1;
-	while (++first <= '7')
+	if (nb <= 1)
+		return (0);
+	n = 2;
+	while ((n * n) < nb)
 	{
-		second = first;
-		while (++second <= '8')
-		{
-			third = second;
-			while (++third <= '9')
-			{
-				if (first != '0' || second != '1' || third != '2')
-				{
-					write(1, ", ", 2);
-				}
-				write(1, &first, 1);
-				write(1, &second, 1);
-				write(1, &third, 1);
-			}
-		}
+		n++;
 	}
+	m = 2;
+	while (m <= n)
+	{
+		if (nb % m == 0)
+		{
+			nb = ft_find_next_prime(nb + 1);
+		}
+		m++;
+	}
+	return (nb);
+}
+
+int	main(void)
+{
+	printf("%d", ft_find_next_prime(2100000000));
+	return (0);
 }

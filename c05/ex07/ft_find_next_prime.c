@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 19:01:29 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/18 15:42:44 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/23 10:43:37 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/23 12:49:41 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_is_negative(int n)
+int	ft_find_next_prime(int nb)
 {
-	char c;
+	int n;
+	int m;
 
-	if (n < 0)
+	if (nb <= 1)
+		return (0);
+	n = 2;
+	while ((n * n) < nb)
 	{
-		c = 'N';
+		n++;
 	}
-	else
+	m = 2;
+	while (m <= n)
 	{
-		c = 'P';
+		if (nb % m == 0)
+		{
+			nb = ft_find_next_prime(nb + 1);
+		}
+		m++;
 	}
-	write(1, &c, 1);
+	return (nb);
 }

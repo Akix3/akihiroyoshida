@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_str_is_lowercase_copy.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 19:32:47 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/20 19:40:52 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:48:00 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_str_is_lowercase(char *str)
 
 int	main(void)
 {
-	char a[] = "";
+	char a[] = "asSf";
 
 	printf("%d", ft_str_is_lowercase(a));
 	return (0);

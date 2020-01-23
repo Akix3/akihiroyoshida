@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr_copy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 17:34:56 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/21 18:23:03 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/22 17:26:33 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
 #include <unistd.h>
 
@@ -19,6 +20,8 @@ char	*ft_strstr(char *str, char *to_find)
 	int m;
 
 	n = 0;
+	if (to_find[0] == '\0')
+		return (str);
 	while (str[n] != '\0')
 	{
 		m = 0;
@@ -26,7 +29,7 @@ char	*ft_strstr(char *str, char *to_find)
 		{
 			m++;
 			if (to_find[m] == '\0')
-				return (str + (n));
+				return (str + n);
 		}
 		n++;
 	}
@@ -35,11 +38,15 @@ char	*ft_strstr(char *str, char *to_find)
 
 int	main(void)
 {
-	char src[] = "abcghi12jklmnop abcdefghijkl123mn";
-	char find[] = "123";
+	char src[] = "Hello world woRld";
+	char find[] = "woRld";
 	char *c;
+	char *d;
 
 	c = ft_strstr(src, find);
 	printf("%s", c);
+	printf("\n");
+	d = strstr(src, find);
+	printf("%s", d);
 	return (0);
 }
