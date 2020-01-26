@@ -6,7 +6,7 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 23:17:10 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/23 10:51:43 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/25 22:31:37 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	ft_is_prime(int nb)
 
 int	main(void)
 {
-	printf("%d", ft_is_prime(3570));
+	printf("%d", ft_is_prime(__INT_MAX__));
 	return (0);
 }

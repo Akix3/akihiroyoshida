@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_fibonacci_copy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 22:12:44 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/22 22:50:59 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/25 20:21:35 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-// int	ft_fibonacci(int index)
-// {
-// 	if (index < 0)
-// 		return (-1);
-// 	else if (index == 0) 
-// 		return (0);
-// 	else if (index == 1)
-// 		return (0);
-// 	else if (index == 2)
-// 		return (1);
-// 	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-// }
 
 int	ft_fibonacci(int index)
 {

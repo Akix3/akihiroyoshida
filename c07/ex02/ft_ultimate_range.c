@@ -1,38 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power_copy.c                          :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 20:14:56 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/25 17:28:29 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/24 20:52:28 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/26 16:22:17 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	ft_iterative_power(int nb, int power)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int result;
+	int count;
 
-	if (power < 0)
-		return (0);
-	else if (power == 0)
-		return (1);
-	else if (power == 1)
-		return (nb);
-	result = nb;
-	while (power >= 2)
+	if (max <= min)
 	{
-		result *= nb;
-		power--;
+		*range = 0;
+		return (0);
 	}
-	return (result);
+	*range = (int *)malloc(sizeof(int) * (max - min));
+	if (*range == '\0')
+		return (-1);
+	count = 0;
+	while (min < max)
+	{
+		(*range)[count] = min;
+		count++;
+		min++;
+	}
+	return (count);
 }
 
 int	main(void)
 {
-	printf("%d", ft_iterative_power(-10, 3));
+	int *i;
+
+	printf("%d\n", ft_ultimate_range(&i, 11, 51));
+
+	int num;
+
+	num = 0;
+	while (num < (51 - 11))
+	{
+		printf("%d\n", i[num]);
+		num++;
+	}
+
 	return (0);
 }

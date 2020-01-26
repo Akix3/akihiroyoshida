@@ -6,7 +6,7 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 11:59:10 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/24 13:00:24 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/25 17:17:16 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	*ft_range(int min, int max)
 	int *result;
 
 	diff = max - min;
-	if (min >= max)
+	if (diff <= 0)
 		return (0);
-	result = (int *)malloc(sizeof(int) * diff + 1);
+	result = (int *)malloc(sizeof(int) * diff);
 	count = 0;
 	while (count <= diff)
 	{
