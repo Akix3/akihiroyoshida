@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/27 16:35:48 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/27 16:35:50 by ayoshida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "ft_stock_str.h"
@@ -47,8 +59,6 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	ans[i].str = 0;
 	return (ans);
 }
-
-
 
 int	main(int argc, char *argv[])
 {

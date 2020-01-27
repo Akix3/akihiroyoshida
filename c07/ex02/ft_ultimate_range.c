@@ -6,7 +6,7 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 20:52:28 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/26 16:22:17 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/27 18:19:52 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		return (0);
 	}
 	*range = (int *)malloc(sizeof(int) * (max - min));
-	if (*range == '\0')
+	if (*range)
 		return (-1);
 	count = 0;
 	while (min < max)
