@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strs_to_tab_mine.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshida <yoshida@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 20:38:17 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/28 00:29:58 by yoshida          ###   ########.fr       */
+/*   Updated: 2020/01/28 12:39:56 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*ft_copy(char *source)
 	while (source[i])
 	{
 		destination[i] = source[i];
+		i++;
 	}
 	destination[i] = '\0';
 	return (destination);
@@ -45,18 +46,18 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	t_stock_str	*dest;
 	int			num;
 
-	dest = (t_stock_str *)malloc(sizeof(t_stock_str) * ac + 1);
+	dest = (t_stock_str *)malloc(sizeof(t_stock_str) * (ac + 1));
 	if (!dest)
 		return (dest);
 	num = 0;
-	while (av[num])
+	while (ac > num)
 	{
-		num = 0;
 		dest[num].size = count(av[num]);
 		dest[num].str = av[num];
 		dest[num].copy = ft_copy(av[num]);
 		num++;
 	}
+	dest[num].str = 0;
 	return (dest);
 }
 
@@ -90,8 +91,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int ii;
 
 	ii = 0;
-	par = (t_stock_str *)malloc(sizeof(t_stock_str) * 1000);
-	while (par + ii)
+	while (par[ii].str)
 	{
 		put_string(par[ii].str);
 		write(1, "\n", 1);
@@ -103,7 +103,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	}
 }
 
-int	main(int argc, char **argv)
+int	main(int argc, char *argv[])
 {
 	ft_show_tab(ft_strs_to_tab(argc, argv));
 	return (0);

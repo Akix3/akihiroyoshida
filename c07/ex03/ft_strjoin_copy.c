@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_copy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 13:38:25 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/28 21:04:22 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/28 21:04:03 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdlib.h>
+
+#include <stdio.h>
 
 int		count1(char *source)
 {
@@ -86,4 +89,27 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			ft_copy(csq, sep);
 	}
 	return (csq);
+}
+
+int		main(void)
+{
+	char **src;
+
+	char a[100] = "abc";
+	char b[100] = "xyz";
+	char c[100] = "ABC";
+	char d[100] = "XYZ";
+	char num[100] = " + ";
+	char *result;
+	src = malloc(sizeof(char) * 500);
+
+	src[0] = a;
+	src[1] = b;
+	src[2] = c;
+	src[3] = d;
+
+	result = ft_strjoin(4, src, num);
+
+	printf("%s", result);
+	return (0);
 }

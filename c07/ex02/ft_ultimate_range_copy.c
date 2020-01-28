@@ -6,10 +6,12 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 20:52:28 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/28 20:49:49 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/28 20:44:03 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_ultimate_range(int **range, int min, int max)
@@ -32,4 +34,22 @@ int	ft_ultimate_range(int **range, int min, int max)
 		min++;
 	}
 	return (count);
+}
+
+int	main(void)
+{
+	int *i;
+
+	printf("%d\n", ft_ultimate_range(&i, 11, 101));
+
+	int num;
+
+	num = 0;
+	while (num < (101 - 11))
+	{
+		printf("%d\n", i[num]);
+		num++;
+	}
+
+	return (0);
 }

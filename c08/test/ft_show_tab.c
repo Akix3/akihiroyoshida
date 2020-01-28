@@ -6,12 +6,11 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 12:49:58 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/28 13:39:29 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/28 13:50:52 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
-#include <unistd.h>
 
 void	put_number(int number)
 {

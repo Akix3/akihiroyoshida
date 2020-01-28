@@ -6,13 +6,11 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 20:38:17 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/28 12:57:16 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/28 13:51:03 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
-#include <unistd.h>
-#include <stdlib.h>
 
 int	count(char *src)
 {

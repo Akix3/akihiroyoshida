@@ -6,7 +6,7 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 13:24:02 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/23 13:32:32 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/28 16:55:16 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ void	ft_putchar(char a)
 	write(1, &a, 1);
 }
 
-int	main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	int c1;
 	int c2;
 
+	(void)argc;
 	c1 = 1;
 	while (argv[c1] != '\0')
 	{
