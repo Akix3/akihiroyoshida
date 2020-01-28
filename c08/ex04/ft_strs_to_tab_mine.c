@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strs_to_tab_mine.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshida <yoshida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 20:38:17 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/27 20:49:16 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/28 00:29:58 by yoshida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int	count(char *src)
 {
@@ -81,7 +82,7 @@ void	put_string(char *s)
 	iii = 0;
 	while (s[iii])
 		iii++;
-	write(1, s, iii - 1);
+	write(1, s, iii);
 }
 
 void	ft_show_tab(struct s_stock_str *par)
