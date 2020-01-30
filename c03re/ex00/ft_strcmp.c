@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 19:49:03 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/29 18:57:17 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/21 17:35:32 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/22 14:04:51 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		count(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int n;
 
 	n = 0;
-	while (str[n] != '\0')
-		n++;
-	return (n);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		i;
-	char	*dest;
-
-	dest = (char *)malloc(sizeof(char) * (count(src) + 1));
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
+	while (!(s1[n] == '\0' && s2[n] == '\0'))
 	{
-		dest[i] = src[i];
-		i++;
+		if (s1[n] != s2[n])
+			return (s1[n] - s2[n]);
+		n++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }

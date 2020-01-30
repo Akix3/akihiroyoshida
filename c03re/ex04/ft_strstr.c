@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 19:49:03 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/29 18:57:17 by ayoshida         ###   ########.fr       */
+/*   Created: 2020/01/21 17:34:56 by ayoshida          #+#    #+#             */
+/*   Updated: 2020/01/30 21:20:07 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		count(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int n;
+	int m;
 
+	if (*to_find == '\0')
+		return (str);
 	n = 0;
 	while (str[n] != '\0')
-		n++;
-	return (n);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		i;
-	char	*dest;
-
-	dest = (char *)malloc(sizeof(char) * (count(src) + 1));
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		m = 0;
+		while (str[n + m] == to_find[m])
+		{
+			m++;
+			if (to_find[m] == '\0')
+				return (str + (n));
+		}
+		n++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }

@@ -6,79 +6,84 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 13:38:25 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/30 12:38:56 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/28 21:04:22 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *src)
+int		count1(char *source)
 {
-	int i;
+	int number;
 
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	number = 0;
+	while (source[number] != '\0')
+		number++;
+	return (number);
 }
 
-int		ft_strslen(int size, char **src)
+int		count2(char **source2)
 {
-	int i1;
-	int i2;
-	int n;
+	int number1;
+	int number2;
+	int counter;
 
-	n = 0;
-	i1 = 0;
-	while (i1 < size)
+	counter = 0;
+	number1 = 0;
+	while (source2[number1])
 	{
-		i2 = 0;
-		while (src[i1][i2] != '\0')
+		number2 = 0;
+		while (source2[number1][number2] != '\0')
 		{
-			i2++;
-			n++;
+			number2++;
+			counter++;
 		}
-		i1++;
+		number1++;
 	}
-	return (n);
+	return (counter);
 }
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_copy(char *dest, char *source3)
 {
-	int i1;
-	int i2;
+	int n1;
+	int n2;
 
-	i1 = 0;
-	while (dest[i1] != '\0')
-		i1++;
-	i2 = 0;
-	while (src[i2] != '\0')
+	n1 = 0;
+	while (dest[n1] != '\0')
 	{
-		dest[i1 + i2] = src[i2];
-		i2++;
+		n1++;
 	}
-	dest[i1 + i2] = '\0';
-	return (dest);
+	n2 = 0;
+	while (source3[n2] != '\0')
+	{
+		dest[n1 + n2] = source3[n2];
+		n2++;
+	}
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*csq;
-	int		i;
+	int		first;
+	int		n;
 
-	i = ft_strslen(size, strs) + (size - 1) * ft_strlen(sep);
-	if (!(csq = (char *)malloc(sizeof(char) * i + 1)))
-		return (0);
+	n = count2(strs) + (size - 1) * count1(sep);
+	csq = (char *)malloc(sizeof(char) * n + 1);
 	if (size == 0)
 		return (csq);
-	*csq = 0;
-	i = 0;
-	while (i < size)
+	first = 0;
+	while (first <= n + 1)
 	{
-		ft_strcat(csq, strs[i]);
-		i++;
-		if (i < size)
-			ft_strcat(csq, sep);
+		csq[first] = '\0';
+		first++;
+	}
+	first = 0;
+	while (strs[first] != '\0')
+	{
+		ft_copy(csq, strs[first]);
+		first++;
+		if (strs[first] != '\0')
+			ft_copy(csq, sep);
 	}
 	return (csq);
 }

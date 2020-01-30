@@ -6,48 +6,49 @@
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 12:49:58 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/28 13:50:52 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/30 14:59:17 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
+#include <unistd.h>
 
-void	put_number(int number)
+void	put_number(int num)
 {
-	char i;
+	char c;
 
-	if (number != 0)
+	if (num != 0)
 	{
-		i = number % 10 + '0';
-		number /= 10;
-		put_number(number);
-		write(1, &i, 1);
+		c = num % 10 + '0';
+		num /= 10;
+		put_number(num);
+		write(1, &c, 1);
 	}
 }
 
 void	put_string(char *s)
 {
-	int iii;
+	int i;
 
-	iii = 0;
-	while (s[iii])
-		iii++;
-	write(1, s, iii);
+	i = 0;
+	while (s[i])
+		i++;
+	write(1, s, i);
 }
 
 void	ft_show_tab(struct s_stock_str *par)
 {
-	int ii;
+	int i;
 
-	ii = 0;
-	while (par[ii].str)
+	i = 0;
+	while (par[i].str != 0)
 	{
-		put_string(par[ii].str);
+		put_string(par[i].str);
 		write(1, "\n", 1);
-		put_number(par[ii].size);
+		put_number(par[i].size);
 		write(1, "\n", 1);
-		put_string(par[ii].copy);
+		put_string(par[i].copy);
 		write(1, "\n", 1);
-		ii++;
+		i++;
 	}
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_range_copy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 11:59:10 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/25 17:17:16 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/01/30 12:22:29 by ayoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 int	*ft_range(int min, int max)
 {
-	int diff;
 	int count;
 	int *result;
 
-	diff = max - min;
-	if (diff <= 0)
+	if (max <= min)
 		return (0);
-	result = (int *)malloc(sizeof(int) * diff);
+	result = (int *)malloc(sizeof(int) * (max - min));
+	if (result == 0)
+		return (0);
 	count = 0;
-	while (count <= diff)
+	while (min < max)
 	{
 		result[count] = min;
 		count++;
@@ -36,14 +36,14 @@ int	*ft_range(int min, int max)
 int	main(void)
 {
 	int max = 100;
-	int min = 30;
+	int min = -100;
 	int *copy = ft_range(min, max);
 	int num;
 
 	num = 0;
 	while (num < (max - min))
 	{
-		printf("%d\n", copy[num]);
+		printf("%d ", copy[num]);
 		num++;
 	}
 	return (0);
