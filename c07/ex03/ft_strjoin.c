@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshida <yoshida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 13:38:25 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/30 12:38:56 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/02/01 18:25:39 by yoshida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*csq;
 	int		i;
-
+	
 	i = ft_strslen(size, strs) + (size - 1) * ft_strlen(sep);
 	if (!(csq = (char *)malloc(sizeof(char) * i + 1)))
 		return (0);

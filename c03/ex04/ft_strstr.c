@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshida <yoshida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 17:34:56 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/22 17:49:35 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/02/02 17:41:13 by yoshida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ char	*ft_strstr(char *str, char *to_find)
 	int n;
 	int m;
 
-	n = 0;
-	if (to_find[0] == '\0')
+	if (*to_find == '\0')
 		return (str);
+	n = 0;
 	while (str[n] != '\0')
 	{
 		m = 0;
@@ -25,7 +25,7 @@ char	*ft_strstr(char *str, char *to_find)
 		{
 			m++;
 			if (to_find[m] == '\0')
-				return (str + n);
+				return (str + (n));
 		}
 		n++;
 	}

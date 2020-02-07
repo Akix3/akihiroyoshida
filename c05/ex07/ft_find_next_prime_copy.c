@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_next_prime_copy.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayoshida <ayoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshida <yoshida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 10:43:37 by ayoshida          #+#    #+#             */
-/*   Updated: 2020/01/30 18:13:58 by ayoshida         ###   ########.fr       */
+/*   Updated: 2020/02/07 16:31:27 by yoshida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int	ft_find_next_prime(int nb)
 
 int	main(void)
 {
-	printf("%d", ft_find_next_prime(2147483646));
+	printf("%d\n", ft_find_next_prime(1234567890));
 	return (0);
 }
